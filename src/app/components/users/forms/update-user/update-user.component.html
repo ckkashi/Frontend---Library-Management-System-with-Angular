@@ -1,0 +1,27 @@
+<div class="container mt-3">
+    <form >
+        <div class="mb-3">
+          <label for="username" class="form-label">Username</label>
+          <input type="text" [(ngModel)]="userData.username" name="username" class="form-control" id="username" >
+        </div>
+        <!-- <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" [(ngModel)]="userData.email" name="email" id="email" >
+          </div> -->
+          <div class="mb-3">
+            <label for="phone" class="form-label">Phone</label>
+            <input type="text" class="form-control" [(ngModel)]="userData.phone" name="phone" id="phone" >
+          </div>
+          <div class="mb-3">
+            <label for="roles" class="form-label">Roles</label>
+            <select class="form-control" [(ngModel)]="userData.userRole" name="roles">
+                <option class="form-options" *ngFor="let role of allRoles" [selected]="role.rolename==userData.userRole" value="{{role.rolename}}">{{role.rolename}}</option>
+            </select>
+          </div>
+        
+        <button class="btn btn-primary" (click)="onUpdate()">Update</button>
+
+
+        <button class="btn btn-danger ms-2" (click)="onDelete()">Delete</button>
+      </form>
+</div>

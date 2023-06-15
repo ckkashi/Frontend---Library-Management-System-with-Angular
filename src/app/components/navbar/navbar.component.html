@@ -1,0 +1,35 @@
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-danger">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Library Management System</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li *ngIf="currentRoute !== '/' && roles.orderBooks == true " class="nav-item">
+            <a class="nav-link" aria-current="page" routerLink="/order-books">Order books</a>
+          </li>
+          <li *ngIf="currentRoute !== '/' && roles.orderBooks " class="nav-item">
+            <a class="nav-link" aria-current="page" routerLink="/my-orders">View my orders</a>
+          </li>
+          <li *ngIf="currentRoute !== '/' && roles.addBooks " class="nav-item">
+            <a class="nav-link" routerLink="/books">Books</a>
+          </li>
+          <li *ngIf="currentRoute !== '/' && roles.viewAllOrders" class="nav-item">
+            <a class="nav-link" routerLink="/all-orders">Orders</a>
+          </li>
+          <li *ngIf="currentRoute !== '/' && roles.viewAllUsers" class="nav-item">
+            <a class="nav-link" routerLink="/users">Users</a>
+          </li>
+          <li *ngIf="currentRoute !== '/' && roles.manageRoles" class="nav-item">
+            <a class="nav-link" routerLink="/roles">Roles</a>
+          </li>
+          
+        </ul>
+        <form *ngIf="currentRoute !== '/'" class="d-flex align-items-center">
+          <h5 class="mt-2 me-3 text-white">{{userData.username}}, {{userData.userRole}}</h5>
+          <button class="btn btn-outline-light" (click)="logoutUser()">Logout</button>
+        </form>
+      </div>
+    </div>
+  </nav>

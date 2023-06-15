@@ -1,0 +1,42 @@
+<div class="mt-3">
+  <hr/>      
+  <h2 class="text-center mt-3">Available roles</h2>
+        <hr/>
+        <table class="table ">
+            <thead>
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Rolename</th>
+                <th scope="col">Order-Books</th>
+                <th scope="col">Add-Books</th>
+                <th scope="col">Remove-Books</th>
+                <th scope="col">Update-Books</th>
+                <th scope="col">All-Orders</th>
+                <th scope="col">All-Users</th>
+                <th scope="col">Manage-Roles</th>
+                <th scope="col">Block-User</th>
+                <th scope="col">Disable-User</th>
+                <th scope="col">Operation</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let role of allRoles">
+                    <th scope="row" class="text-center" >{{role.id}}</th>
+                    <td scope="col" class="text-center" >{{role.rolename}}</td>
+                    <td scope="col" class="text-center" [ngClass]="role.orderBooks?'text-success':'text-danger'">{{role.orderBooks}}</td>
+                    <td scope="col" class="text-center" [ngClass]="role.addBooks?'text-success':'text-danger'">{{role.addBooks}}</td>
+                    <td scope="col" class="text-center" [ngClass]="role.removeBooks?'text-success':'text-danger'">{{role.removeBooks}}</td>
+                    <td scope="col" class="text-center" [ngClass]="role.updateBooks?'text-success':'text-danger'">{{role.updateBooks}}</td>
+                    <td scope="col" class="text-center" [ngClass]="role.viewAllOrders?'text-success':'text-danger'">{{role.viewAllOrders}}</td>
+                    <td scope="col" class="text-center" [ngClass]="role.viewAllUsers?'text-success':'text-danger'">{{role.viewAllUsers}}</td>
+                    <td scope="col" class="text-center" [ngClass]="role.manageRoles?'text-success':'text-danger'">{{role.manageRoles}}</td>
+                    <td scope="col" class="text-center" [ngClass]="role.blockUser?'text-success':'text-danger'">{{role.blockUser}}</td>
+                    <td scope="col" class="text-center" [ngClass]="role.disableUser?'text-success':'text-danger'">{{role.disableUser}}</td>
+                    <td scope="col" class="text-center">
+                        <button class="btn btn-warning" (click)="updateRole(role.id)">Update</button>
+                    </td>
+                  </tr>
+            </tbody>
+
+          </table>
+      </div>

@@ -1,0 +1,46 @@
+<div class="container mt-3">
+    <h1>{{pageName}} Role</h1>
+    <form >
+        <div class="mb-3">
+          <label for="rolename" class="form-label">Rolename</label>
+          <input type="text"  name="rolename" class="form-control" [(ngModel)]="roles.rolename" id="rolename" [disabled]="pageName=='Update'">
+        </div>
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" [(ngModel)]="roles.addBooks" name="addBooks">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Add Books Role </label>
+        </div>
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" [(ngModel)]="roles.updateBooks" name="updateBooks">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Update Books Role </label>
+        </div>
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" [(ngModel)]="roles.removeBooks" name="removeBooks">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Remove Books Role </label>
+        </div>
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" [(ngModel)]="roles.orderBooks" name="orderBooks">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Order Books Role </label>
+        </div>
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" [(ngModel)]="roles.viewAllOrders" name="allOrders">
+            <label class="form-check-label" for="flexSwitchCheckDefault">View All Orders Role </label>
+        </div>
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" [(ngModel)]="roles.viewAllUsers" name="allUsers">
+            <label class="form-check-label" for="flexSwitchCheckDefault">View All Users Role </label>
+        </div>
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" [(ngModel)]="roles.blockUser" name="blockUsers">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Block Users Role </label>
+        </div>
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" [(ngModel)]="roles.disableUser" name="disableUser">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Disable Users Role </label>
+        </div>
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" [(ngModel)]="roles.manageRoles" name="disableUser">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Roles Manage Role </label>
+        </div>
+        <button class="btn btn-primary mt-2" (click)="btnClick()">{{pageName}}</button>
+    </form>
+</div>

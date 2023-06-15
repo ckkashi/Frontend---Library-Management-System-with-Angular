@@ -1,0 +1,33 @@
+<div class="container mt-3">
+    <h1>Order Books</h1>
+    <hr/>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col" class="text-center">Id</th>
+            <th scope="col" class="text-center">Bookname</th>
+            <th scope="col" class="text-center">Author</th>
+            <th scope="col" class="text-center">Category</th>
+            <th scope="col" class="text-center">Price</th>
+            <th scope="col" class="text-center">Available-Quantity</th>
+            <th scope="col" class="text-center">Quantity</th>
+            <th scope="col" class="text-center">Operation</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let book of booksList">
+                <th scope="row" class="text-center" >{{book.id}}</th>
+                <td scope="col" class="text-center" >{{book.bookName}}</td>
+                <td scope="col" class="text-center" >{{book.author}}</td>
+                <td scope="col" class="text-center" >{{book.category}}</td>
+                <td scope="col" class="text-center" >{{book.price}}</td>
+                <td scope="col" class="text-center" >{{book.quantity<=0?'Out of stock':book.quantity}}</td>
+                <td scope="col" class="text-center" ><input type="number" id="q-{{book.id}}" name="quantity" class="form-control ms-auto"/></td>
+                <td scope="col" class="text-center">
+                    <button class="btn btn-warning" (click)="order(book.id)">Order</button>
+                </td>
+              </tr>
+        </tbody>
+
+      </table>
+</div>

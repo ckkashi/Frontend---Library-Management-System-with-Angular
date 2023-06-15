@@ -1,0 +1,33 @@
+<div class="container-fluid">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Username</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Roles</th>
+            <th scope="col">Operations</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of newUsers">
+            <th scope="row">{{user.id}}</th>
+            <td>{{user.username}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.phone}}</td>
+            <td>
+                {{user.userRole}}
+                <!-- <select>
+                    <option  *ngFor="let role of allRoles" [selected]="role.rolename==user.userRole" value="{{role.rolename}}">{{role.rolename}}</option>
+                </select> -->
+            </td>
+            <td>
+                <button class="btn btn-warning" (click)="onUpdate(user.id)">Update</button>
+                <!-- <button class="btn btn-danger ms-2" (click)="onDelete(user.id)">Delete</button> -->
+            </td>
+          </tr>
+          
+        </tbody>
+      </table>
+</div>
